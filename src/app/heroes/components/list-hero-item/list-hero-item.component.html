@@ -1,0 +1,51 @@
+<div *ngIf="hero">
+    <mat-card>
+        <mat-card-header class="mb-2">
+            <mat-card-title>{{ hero.name | capitalizeFirst }}</mat-card-title>
+            <mat-card-subtitle class="full-name">{{ hero.biography['full-name'] }}</mat-card-subtitle>
+        </mat-card-header>
+
+        <img mat-card-image 
+            [src]="hero.image?.url ? hero.image?.url : 'assets/images/no-image.png'" 
+            [alt]="hero.name">
+
+        <mat-card-content class="mt-3">
+            <span class="text-l">{{ hero.biography.publisher }}</span>
+            <div class="mt-2">
+                <p class="first-appearance">
+                    <strong class="mb-3">First appearence</strong>
+                    {{ hero.biography['first-appearance'] }}
+                </p>
+                
+                <mat-chip-listbox>
+                    <mat-chip>
+                        {{ hero.biography.alignment }}
+                    </mat-chip>
+                </mat-chip-listbox>
+            </div>
+        </mat-card-content> 
+
+        <mat-divider></mat-divider>
+
+        <mat-card-actions class="flex justify-content-between">
+            <button 
+                mat-button 
+                mat-raised 
+                color="accent"
+                [routerLink]="['/heroes/edit', hero.id]">
+                <mat-icon>edit</mat-icon>
+                Edit
+            </button>
+            
+            <button 
+                mat-button 
+                mat-raised 
+                [routerLink]="['/heroes/hero', hero.id]"> 
+                <mat-icon>more_horiz</mat-icon>
+            </button>
+            
+        </mat-card-actions>
+
+    </mat-card>
+
+</div>

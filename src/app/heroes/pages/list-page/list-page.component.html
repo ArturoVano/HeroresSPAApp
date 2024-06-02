@@ -1,0 +1,40 @@
+<div *ngIf="spinner$ | async" 
+     class="flex justify-content-center align-items-center h-full">
+    <mat-spinner class="flex align-items-center"></mat-spinner>
+</div>
+
+<div *ngIf="heroes$ | async as heroes">
+    <h2 class="m-3">Heroes list</h2>
+
+    <div class="flex flex-column p-2">
+        <mat-form-field>
+            <mat-label>Search heroes</mat-label>
+            <input 
+                matInput 
+                type="text"
+                [formControl]="search">
+        </mat-form-field>
+
+        <button 
+            mat-button
+            mat-raised 
+            [routerLink]="['/heroes/new-hero']">
+            <mat-icon>add</mat-icon>
+            Add new hero
+        </button>
+
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="grid bm-8 pt-5">
+        <div *ngFor="let hero of heroes"
+            class="col-12 sm:col-4 md:col-3 xl:col-2"
+        >
+            <list-hero-item 
+                *ngIf="hero && hero.id" 
+                [hero]="hero">
+            </list-hero-item>
+        </div>
+    </div>
+</div>

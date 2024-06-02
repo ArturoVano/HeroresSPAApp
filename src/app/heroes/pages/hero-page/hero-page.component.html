@@ -1,0 +1,41 @@
+
+<div *ngIf="spinner$ | async" 
+        class="flex justify-content-center align-items-center h-full">
+    <mat-spinner></mat-spinner>
+</div>
+
+<div *ngIf="hero$ | async as hero" class="flex m-3">
+
+    <mat-card class="flex-1">
+        <img mat-card-image 
+        [src]="hero.image?.url ? hero.image?.url : 'assets/images/no-image.png'" 
+        [alt]="hero.name">
+    </mat-card>
+
+    <mat-card class="flex-1">
+        <mat-card-header class="flex m-3">
+            <mat-card-title class="text-3xl">{{ hero.name }}</mat-card-title>
+            <mat-card-subtitle class="text-base">{{ hero.biography['full-name'] }}</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content class="">
+            <mat-list>
+                <mat-list-item>{{ hero.biography['first-appearance'] }}</mat-list-item>
+                <mat-list-item>{{ hero.biography.aliases }}</mat-list-item>
+                <mat-list-item>{{ hero.biography.publisher }}</mat-list-item>
+                <mat-list-item><strong>Alter egos </strong>{{ hero.biography['alter-egos'] }}</mat-list-item>
+            </mat-list>
+
+            <button
+                mat-button
+                color="warn"
+                (click)="goBack()"
+            >
+                <mat-icon>arrow_back</mat-icon>
+                Back to list
+            </button>
+
+        </mat-card-content>
+    </mat-card>
+</div>
+

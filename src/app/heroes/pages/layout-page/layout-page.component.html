@@ -1,0 +1,38 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav mode="push" class="w-2">
+        <mat-toolbar color="accent">
+            <span class="flex-auto">Menu</span>
+            <button mat-icon-button (click)="sidenav.toggle()" class="primary">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </mat-toolbar>
+
+        <mat-nav-list *ngIf="sidebarItems$ | async as sidebarItems">
+            <mat-list-item 
+                *ngFor="let item of sidebarItems"
+                [routerLink]="item.url">
+                <mat-icon>{{ item.icon }}</mat-icon>
+                <span>
+                    {{ item.label }}
+                </span>
+            </mat-list-item>
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+    <mat-toolbar color="accent" class="flex justify-content-between align-items-center">
+        <button mat-icon-button class="flex-initial" (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <div class="flex-1 text-center text-xl">
+            <span>Heroes APP for World 2 Meet</span>
+        </div>
+    </mat-toolbar>
+
+    <div class="container p-2 h-full">
+        <router-outlet></router-outlet>
+    </div>
+
+</mat-sidenav-container>
+
+

@@ -1,0 +1,139 @@
+<div *ngIf="spinner$ | async" 
+     class="flex justify-content-center align-items-center h-full">
+    <mat-spinner class="flex align-items-center"></mat-spinner>
+</div>
+
+<div class="m-3">
+    <h2>
+        {{ heroId.value ? 'Edit ' + heroName.value : 'Create new' }} 
+        hero
+    </h2>
+    <mat-divider class="mb-3"></mat-divider>
+
+    <div class="grid">
+        <div class="col-6">
+            <mat-card>
+                <mat-card-content>
+                    <form class="grid" [formGroup]="heroForm" (ngSubmit)="onSubmit()">
+                     
+                        <mat-form-field class="col-12 sm:col-6">
+                            <mat-label>Super hero</mat-label>
+                            <input 
+                                matInput 
+                                type="text" 
+                                required
+                                formControlName="name"
+                                class="show-uppercase"
+                            />
+                        </mat-form-field>
+                        <mat-form-field class="col-12 sm:col-6">
+                            <mat-label>Full name</mat-label>
+                            <input 
+                                matInput 
+                                type="text" 
+                                formControlName="fullName"
+                            />
+                        </mat-form-field>
+                        <mat-form-field class="col-12">
+                            <mat-label>Alter ego</mat-label>
+                            <input 
+                                matInput 
+                                type="text" 
+                                formControlName="alterEgo"
+                            />
+                        </mat-form-field>
+                        <mat-form-field class="col-12">
+                            <mat-label>First appearence</mat-label>
+                            <input 
+                                matInput 
+                                type="text"                         
+                                formControlName="firstAppearance"
+                            />
+                        </mat-form-field>
+                        <mat-form-field class="col-12">
+                            <mat-label>Aliases</mat-label> 
+                            <input 
+                                matInput 
+                                type="text" 
+                                formControlName="aliases"
+                            />
+                        </mat-form-field>
+                        <mat-form-field class="col-12">
+                            <mat-label>Publisher</mat-label> 
+                            <mat-select required formControlName="publisher">
+                                <mat-option *ngFor="let publisher of publishers$ | async"
+                                    [value]="publisher"
+                                >
+                                    {{ publisher }}
+                                </mat-option>
+                            </mat-select> 
+                        </mat-form-field>
+                        <mat-form-field class="col-12">
+                            <mat-label>Alignment</mat-label> 
+                            <mat-select required formControlName="alignment">
+                                <mat-option *ngFor="let alignment of alignments"
+                                    [value]="alignment"
+                                >
+                                    {{ alignment }}
+                                </mat-option>
+                            </mat-select> 
+                        </mat-form-field>
+                        <mat-form-field class="col-12">
+                            <mat-label>Image url</mat-label>
+                            <input 
+                                matInput 
+                                type="text" 
+                                formControlName="img"
+                            />
+                        </mat-form-field>
+                        
+                        <div class="col flex justify-content-between">
+                            <button *ngIf="heroId.value"
+                                mat-flat-button
+                                color="warn"
+                                (click)="deleteHero()"
+                                type="button"
+                            >
+                                <mat-icon>delete</mat-icon>
+                                Delete
+                            </button>
+    
+                            <button 
+                                mat-flat-button
+                                color="primary"
+                                type="submit"
+                            >
+                                <mat-icon>save</mat-icon>
+                                Save
+                            </button>
+                        </div>
+                    </form>
+
+                </mat-card-content>
+            </mat-card>
+
+            <button
+                mat-button
+                color="warn"
+                class="m-3"
+                (click)="goBack()"
+            >
+                <mat-icon>arrow_back</mat-icon>
+                Back to list
+            </button>
+        </div>
+
+        <div class="col-6 sm:col-6">
+
+            <mat-card class="flex-1">
+                <img mat-card-image 
+                [src]="heroImg.value 
+                    ? heroImg.value 
+                    : 'assets/images/no-image.png'" 
+                [alt]="heroImg.value">
+            </mat-card>
+
+        </div>
+
+    </div> 
+</div>
