@@ -1,6 +1,6 @@
 # HeroesW2M
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
+Project developed by World Two Meet company Test
 
 ## Development server
 
