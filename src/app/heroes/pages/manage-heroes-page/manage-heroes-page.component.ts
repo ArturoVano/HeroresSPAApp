@@ -6,14 +6,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Alignment, Hero } from '../../models/hero.model';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '../../components/dialogs/delete-dialog/delete-dialog.component';
-import { SnackbarService } from 'src/app/services/snackbar-service.service';
+import { SnackbarService } from 'src/app/services/snackbar.service';
 
 @Component({
-  selector: 'app-new-hero-page',
-  templateUrl: './new-hero-page.component.html',
-  styleUrls: ['./new-hero-page.component.css']
+  selector: 'app-manage-heroes-page',
+  templateUrl: './manage-heroes-page.component.html',
+  styleUrls: ['./manage-heroes-page.component.css']
 })
-export class NewHeroPageComponent implements OnInit, OnDestroy {
+export class ManageHeroesPageComponent implements OnInit, OnDestroy {
 
   publishers$: Observable<string[]> = this.heroesService.getPublishers();
 

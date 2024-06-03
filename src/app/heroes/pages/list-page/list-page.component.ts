@@ -2,8 +2,8 @@ import { Component, OnDestroy } from '@angular/core';
 import { Hero } from '../../models/hero.model';
 import { HeroesService } from '../../services/heroes.service';
 import { BehaviorSubject, Observable, Subscription, combineLatest, debounceTime, map, startWith, switchMap, tap } from 'rxjs';
-import { SnackbarService } from 'src/app/services/snackbar-service.service';
 import { FormControl } from '@angular/forms';
+import { SnackbarService } from 'src/app/services/snackbar.service';
 
 @Component({
   selector: 'app-list-page',

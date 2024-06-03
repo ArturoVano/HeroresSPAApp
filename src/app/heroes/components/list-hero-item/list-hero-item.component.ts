@@ -6,12 +6,8 @@ import { Hero } from '../../models/hero.model';
   templateUrl: './list-hero-item.component.html',
   styleUrls: ['./list-hero-item.component.css']
 })
-export class ListHeroItemComponent implements OnInit {
+export class ListHeroItemComponent {
 
   @Input() hero?: Hero
-
-  ngOnInit(): void {
-    if (!this.hero) throw new Error("Hero is missing");
-  }
 
 }
