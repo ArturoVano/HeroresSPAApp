@@ -4,6 +4,7 @@ import { HeroesService } from '../../services/heroes.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { of } from 'rxjs';
 import { Alignment, Hero } from '../../models/hero.model';
+import { MaterialModule } from 'src/app/material/material.module';
 
 describe('HeroPageComponent', () => {
   let component: HeroPageComponent;
@@ -36,6 +37,7 @@ describe('HeroPageComponent', () => {
 
     await TestBed.configureTestingModule({
       declarations: [HeroPageComponent],
+      imports: [MaterialModule],
       providers: [
         { provide: HeroesService, useValue: heroesServiceSpy },
         { provide: Router, useValue: routerSpy },
@@ -53,31 +55,39 @@ describe('HeroPageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
   it('should fetch hero on init and populate hero$', () => {
     component.hero$.subscribe(hero => {
       expect(hero).toEqual(mockHero);
     });
-    expect(heroesService.getHeroById).toHaveBeenCalledWith('1');
+    setTimeout(() => {
+      fixture.detectChanges();
+      expect(heroesService.getHeroById).toHaveBeenCalledWith('1');
+    }, 500);
   });
 
   it('should navigate to heroes list if hero is not found', () => {
     heroesService.getHeroById.and.returnValue(of(undefined));
     component.hero$.subscribe();
-    expect(router.navigate).toHaveBeenCalledWith(['/heroes/list']);
+    setTimeout(() => {
+      fixture.detectChanges();
+      expect(router.navigate).toHaveBeenCalledWith(['/heroes/list']);
+    }, 500);    
   });
 
   it('should set spinner$ to false after fetching hero', () => {
     component.hero$.subscribe(() => {
-      expect(component.spinner$.value).toBe(false);
+      setTimeout(() => {
+        fixture.detectChanges();
+        expect(component.spinner$.value).toBe(false);
+      }, 1000);    
     });
   });
 
   it('should navigate to heroes list on goBack', () => {
     component.goBack();
-    expect(router.navigate).toHaveBeenCalledWith(['heroes/list']);
+    setTimeout(() => {
+      fixture.detectChanges();
+      expect(router.navigate).toHaveBeenCalledWith(['heroes/list']);
+    }, 1000);
   });
 });

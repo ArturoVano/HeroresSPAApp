@@ -60,7 +60,7 @@ export class ManageHeroesPageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    if (!this.router.url.includes('edit')) {
+    if (!this.router.url?.includes('edit')) {
       this.spinner$.next(false)
       return
     };
@@ -160,7 +160,6 @@ export class ManageHeroesPageComponent implements OnInit, OnDestroy {
   deleteHero() {
     if (!this.heroId.value) {
       this.snackbarService.showMessage(`Hero id is required`);
-      throw Error('Hero id is required')
     };
 
     const dialogRef = this.matDialog.open(ConfirmDialogComponent, {

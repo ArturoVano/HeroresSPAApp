@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Hero } from '../../models/hero.model';
 import { HeroesService } from '../../services/heroes.service';
-import { BehaviorSubject, Observable, Subscription, combineLatest, debounceTime, map, startWith, switchMap, tap } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription, catchError, combineLatest, debounceTime, map, startWith, switchMap, tap } from 'rxjs';
 import { FormControl } from '@angular/forms';
 import { SnackbarService } from 'src/app/services/snackbar.service';
 
@@ -30,6 +30,10 @@ export class ListPageComponent implements OnDestroy {
     // In case there is no hero in the local data, we ask for it externally
     this.subscription.add(
       this.heroesService.getHeroes().pipe(
+        catchError((err, heroes) => {
+          console.log(err)
+          return heroes;
+        }),
         switchMap((heroes) => {
           if (heroes?.length) {
             return heroes;

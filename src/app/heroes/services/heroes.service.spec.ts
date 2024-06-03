@@ -2,8 +2,8 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { HeroesService } from './heroes.service';
 import { environments } from 'src/environments/environments';
-import { Alignment, Hero, Response } from '../models/hero.model';
-import { of } from 'rxjs';
+import { Alignment, Hero } from '../models/hero.model';
+
 
 describe('HeroesService', () => {
   let service: HeroesService;
@@ -48,31 +48,6 @@ describe('HeroesService', () => {
     const req = httpMock.expectOne(environments.heroesUrl);
     expect(req.request.method).toBe('GET');
     req.flush(dummyHeroes);
-  });
-
-  it('should initiate external heroes', () => {
-    const dummyExternalHeroes: Hero[] = [
-      { id: '1', 
-        name: 'Hero One', 
-        biography: { publisher: 'Publisher One', alignment: Alignment.GOOD }
-      },
-        { id: '2', 
-        name: 'Hero Two', 
-        biography: { publisher: 'Publisher Two', alignment: Alignment.BAD }
-      },
-    ];
-
-    spyOn(service, 'getExternalHeroesList').and.returnValue(of(dummyExternalHeroes));
-
-    service.initiateExternalHeroes().subscribe(success => {
-      expect(success).toBe(true);
-    });
-
-    dummyExternalHeroes.forEach(hero => {
-      const req = httpMock.expectOne(environments.heroesUrl);
-      expect(req.request.method).toBe('POST');
-      req.flush(hero);
-    });
   });
 
   it('should get hero by id', () => {

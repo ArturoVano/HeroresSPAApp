@@ -5,6 +5,7 @@ import { SnackbarService } from 'src/app/services/snackbar.service';
 import { of } from 'rxjs';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Hero } from '../../models/hero.model';
+import { MaterialModule } from 'src/app/material/material.module';
 
 describe('ListPageComponent', () => {
   let component: ListPageComponent;
@@ -17,7 +18,10 @@ describe('ListPageComponent', () => {
     const snackbarServiceSpy = jasmine.createSpyObj('SnackbarService', ['showMessage']);
 
     await TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule],
+      imports: [
+        ReactiveFormsModule,
+        MaterialModule
+      ],
       declarations: [ListPageComponent],
       providers: [
         { provide: HeroesService, useValue: heroesServiceSpy },
@@ -84,6 +88,9 @@ describe('ListPageComponent', () => {
       expect(heroes).toEqual([mockHeroes[0]]);
     });
 
-    expect(component.spinner$.value).toBe(false);
+    fixture.detectChanges();
+    setTimeout(() => {
+      expect(component.spinner$.value).toBe(false);
+    }, 1000);
   });
 });

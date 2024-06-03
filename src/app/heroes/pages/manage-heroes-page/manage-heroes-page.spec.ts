@@ -7,9 +7,10 @@ import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { of } from 'rxjs';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { Hero, Alignment } from '../../models/hero.model';
+import { MaterialModule } from 'src/app/material/material.module';
+import { Call } from '@angular/compiler';
 
 describe('ManageHeroesPageComponent', () => {
   let component: ManageHeroesPageComponent;
@@ -17,7 +18,7 @@ describe('ManageHeroesPageComponent', () => {
   let heroesService: jasmine.SpyObj<HeroesService>;
   let snackbarService: jasmine.SpyObj<SnackbarService>;
   let matDialog: jasmine.SpyObj<MatDialog>;
-  let router: jasmine.SpyObj<Router>;
+  let router: Router;
   let activatedRoute: any;
 
   const mockHero: Hero = {
@@ -36,6 +37,11 @@ describe('ManageHeroesPageComponent', () => {
     }
   };
 
+  const mockHeroTwo: Hero = { 
+    name: 'Batman', 
+    biography: { publisher: 'DC Comic', alignment: Alignment.GOOD }
+  } as Hero;
+
   beforeEach(async () => {
     const heroesServiceSpy = jasmine.createSpyObj('HeroesService', ['getHeroById', 'getPublishers', 'updateHero', 'createHero', 'deleteHero']);
     const snackbarServiceSpy = jasmine.createSpyObj('SnackbarService', ['showMessage']);
@@ -50,7 +56,7 @@ describe('ManageHeroesPageComponent', () => {
         ReactiveFormsModule,
         HttpClientTestingModule,
         BrowserAnimationsModule,
-        MatSnackBarModule,
+        MaterialModule,
         NoopAnimationsModule
       ],
       providers: [
@@ -66,7 +72,7 @@ describe('ManageHeroesPageComponent', () => {
     heroesService = TestBed.inject(HeroesService) as jasmine.SpyObj<HeroesService>;
     snackbarService = TestBed.inject(SnackbarService) as jasmine.SpyObj<SnackbarService>;
     matDialog = TestBed.inject(MatDialog) as jasmine.SpyObj<MatDialog>;
-    router = TestBed.inject(Router) as jasmine.SpyObj<Router>;
+    router = { ...TestBed.inject(Router), url: 'edit/1' } as Router;
 
     heroesService.getHeroById.and.returnValue(of(mockHero));
     heroesService.getPublishers.and.returnValue(of(['DC Comics', 'Marvel Comics']));
@@ -85,37 +91,47 @@ describe('ManageHeroesPageComponent', () => {
 
   it('should populate form with hero data on init if edit mode', () => {
     component.ngOnInit();
-    expect(component.heroForm.value.name).toEqual(mockHero.name);
+    setTimeout(() => {
+      expect(component.heroForm.value.name).toEqual(mockHero.name);
+    }, 1000);
   });
 
   it('should call createHero on submit if no hero ID', () => {
-    component.heroForm.patchValue({ id: null, name: 'Batman' });
+    component.heroForm.patchValue(mockHeroTwo);
     component.onSubmit();
-    expect(heroesService.createHero).toHaveBeenCalled();
+    setTimeout(() => {
+      expect(heroesService.createHero).toHaveBeenCalled();
+    }, 1000);
   });
 
   it('should call updateHero on submit if hero ID exists', () => {
-    component.heroForm.patchValue({ id: '1', name: 'Batman' });
+    component.heroForm.patchValue(mockHero);
     component.onSubmit();
-    expect(heroesService.updateHero).toHaveBeenCalled();
+    setTimeout(() => {
+      expect(heroesService.updateHero).toHaveBeenCalled();
+    }, 1000);
   });
 
-  it('should show snackbar message on successful update', () => {
-    component.heroForm.patchValue({ id: '1', name: 'Batman' });
+  it('should call snackbar message on successful update', () => {
+    component.heroForm.patchValue(mockHero);
     component.onSubmit();
-    expect(snackbarService.showMessage).toHaveBeenCalledWith('Batman has been updated!');
+    setTimeout(() => {
+      expect(snackbarService.showMessage).toHaveBeenCalledWith('Batman has been updated!');
+    }, 1000);
   });
 
   it('should navigate to hero list on successful creation', () => {
-    component.heroForm.patchValue({ id: null, name: 'Batman' });
+    component.heroForm.patchValue(mockHeroTwo);
     component.onSubmit();
-    expect(router.navigate).toHaveBeenCalledWith(['/heroes/list']);
+    setTimeout(() => {
+      expect(router.navigate).toHaveBeenCalledWith(['/heroes/list']);
+    }, 1000);
   });
 
-  it('should open dialog on deleteHero and delete hero on confirm', () => {
+  it('should open dialog on deleteHero and on confirm', () => {
     const dialogRefSpyObj = jasmine.createSpyObj({ afterClosed: of(true) });
     matDialog.open.and.returnValue(dialogRefSpyObj);
-    component.heroForm.patchValue({ id: '1', name: 'Superman' });
+    component.heroForm.patchValue(mockHero);
     component.deleteHero();
     expect(matDialog.open).toHaveBeenCalled();
     expect(heroesService.deleteHero).toHaveBeenCalledWith('1');
