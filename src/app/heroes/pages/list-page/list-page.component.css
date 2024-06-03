@@ -2,3 +2,7 @@
 .list-page-item {
     max-height: 600px;
 }
+
+.no-heroes-card {
+    max-width: 400px;
+}

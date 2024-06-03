@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, forkJoin, map, of, switchMap } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, forkJoin, map, of, switchMap } from 'rxjs';
 import { Hero, Response } from '../models/hero.model';
 import { environments } from 'src/environments/environments';
 
@@ -12,8 +12,9 @@ export class HeroesService {
 
   private heroesUrl = environments.heroesUrl;
   private externalHeroesUrl = environments.externalHeroesUrl;
-  HEROES_PER_PAGE = 20;
   EXTERNAL_HEROES = 40;
+
+  refresh$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient) { }
 
