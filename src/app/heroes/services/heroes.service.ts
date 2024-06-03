@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, forkJoin, map, of, switchMap } from 'rxjs';
+import { EMPTY, Observable, catchError, forkJoin, map, of, switchMap } from 'rxjs';
 import { Hero, Response } from '../models/hero.model';
 import { environments } from 'src/environments/environments';
+import { SnackbarService } from 'src/app/services/snackbar.service';
 
 
 @Injectable({
@@ -14,7 +15,9 @@ export class HeroesService {
   private externalHeroesUrl = environments.externalHeroesUrl;
   EXTERNAL_HEROES = 40;
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private snackbarService: SnackbarService) { }
 
   // Used to dump data from the api to our database
   initiateExternalHeroes(): Observable<boolean> {
@@ -63,7 +66,15 @@ export class HeroesService {
   }
 
   getHeroes(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.heroesUrl);
+    return this.http.get<Hero[]>(this.heroesUrl).pipe(
+      catchError((error) => {
+        console.error('Error fetching heroes:', error);
+        this.snackbarService.showMessage(
+          'Error loading heroes: ' + error.message, false
+        );
+        throw new Error(error);
+      })
+    );
   }
 
   getHeroById(id: string): Observable<Hero | undefined> {
