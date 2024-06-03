@@ -54,12 +54,10 @@ describe('HeroesService', () => {
     const dummyExternalHeroes: Hero[] = [
       { id: '1', 
         name: 'Hero One', 
-        response: Response.SUCCESS, 
         biography: { publisher: 'Publisher One', alignment: Alignment.GOOD }
       },
         { id: '2', 
         name: 'Hero Two', 
-        response: Response.SUCCESS, 
         biography: { publisher: 'Publisher Two', alignment: Alignment.BAD }
       },
     ];
@@ -81,7 +79,6 @@ describe('HeroesService', () => {
     const dummyHero: Hero = { 
       id: '1', 
       name: 'Hero One',
-      response: Response.SUCCESS, 
       biography: { publisher: 'Publisher One', alignment: Alignment.GOOD } 
     };
 
