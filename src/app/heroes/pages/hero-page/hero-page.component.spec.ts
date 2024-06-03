@@ -3,7 +3,7 @@ import { HeroPageComponent } from './hero-page.component';
 import { HeroesService } from '../../services/heroes.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { of } from 'rxjs';
-import { Hero } from '../../models/hero.model';
+import { Alignment, Hero } from '../../models/hero.model';
 
 describe('HeroPageComponent', () => {
   let component: HeroPageComponent;
@@ -21,7 +21,7 @@ describe('HeroPageComponent', () => {
       aliases: ['Man of Steel'],
       "first-appearance": 'Action Comics #1',
       publisher: 'DC Comics',
-      alignment: 'good',
+      alignment: Alignment.GOOD,
     },
     image: {
       url: 'superman.jpg'

@@ -50,256 +50,6 @@
       }
     },
     {
-      "id": "2",
-      "response": "success",
-      "name": "Abe Sapien",
-      "powerstats": {
-        "intelligence": "88",
-        "strength": "28",
-        "speed": "35",
-        "durability": "65",
-        "power": "100",
-        "combat": "85"
-      },
-      "biography": {
-        "full-name": "Abraham Sapien",
-        "alter-egos": "No alter egos found.",
-        "aliases": [
-          "Langdon Everett Caul",
-          "Abraham Sapien",
-          "Langdon Caul"
-        ],
-        "place-of-birth": "-",
-        "first-appearance": "Hellboy: Seed of Destruction (1993)",
-        "publisher": "Dark Horse Comics",
-        "alignment": "good"
-      },
-      "appearance": {
-        "gender": "Male",
-        "race": "Icthyo Sapien",
-        "height": [
-          "6'3",
-          "191 cm"
-        ],
-        "weight": [
-          "145 lb",
-          "65 kg"
-        ],
-        "eye-color": "Blue",
-        "hair-color": "No Hair"
-      },
-      "work": {
-        "occupation": "Paranormal Investigator",
-        "base": "-"
-      },
-      "connections": {
-        "group-affiliation": "Bureau for Paranormal Research and Defense",
-        "relatives": "Edith Howard (wife, deceased)"
-      },
-      "image": {
-        "url": "https://www.superherodb.com/pictures2/portraits/10/100/956.jpg"
-      }
-    },
-    {
-      "id": "17",
-      "response": "success",
-      "name": "Alfred Pennyworth",
-      "powerstats": {
-        "intelligence": "63",
-        "strength": "10",
-        "speed": "17",
-        "durability": "10",
-        "power": "7",
-        "combat": "55"
-      },
-      "biography": {
-        "full-name": "Alfred Thaddeus Crane Pennyworth",
-        "alter-egos": "No alter egos found.",
-        "aliases": [
-          "Alfred Beagle"
-        ],
-        "place-of-birth": "-",
-        "first-appearance": "Batman #16 (April, 1943)",
-        "publisher": "DC Comics",
-        "alignment": "good"
-      },
-      "appearance": {
-        "gender": "Male",
-        "race": "Human",
-        "height": [
-          "5'10",
-          "178 cm"
-        ],
-        "weight": [
-          "160 lb",
-          "72 kg"
-        ],
-        "eye-color": "Blue",
-        "hair-color": "Black"
-      },
-      "work": {
-        "occupation": "Butler; Caretaker, former Actor; Field Medic; Government Agent",
-        "base": "Wayne Manor; Batcave; Gotham City"
-      },
-      "connections": {
-        "group-affiliation": "Batman Family, Outsiders",
-        "relatives": "Jarvis Pennyworth (father, deceased), Wilfred Pennyworth (older brother), Daphne Pennyworth (niece); Bruce Wayne (Batman, legal ward)"
-      },
-      "image": {
-        "url": "https://www.superherodb.com/pictures2/portraits/10/100/628.jpg"
-      }
-    },
-    {
-      "id": "18",
-      "response": "success",
-      "name": "Alien",
-      "powerstats": {
-        "intelligence": "50",
-        "strength": "28",
-        "speed": "42",
-        "durability": "90",
-        "power": "57",
-        "combat": "60"
-      },
-      "biography": {
-        "full-name": "Xenomorph",
-        "alter-egos": "No alter egos found.",
-        "aliases": [
-          "-"
-        ],
-        "place-of-birth": "Your chest :)",
-        "first-appearance": "Alien (1979)",
-        "publisher": "Dark Horse Comics",
-        "alignment": "bad"
-      },
-      "appearance": {
-        "gender": "Male",
-        "race": "Xenomorph XX121",
-        "height": [
-          "8'0",
-          "244 cm"
-        ],
-        "weight": [
-          "375 lb",
-          "169 kg"
-        ],
-        "eye-color": "-",
-        "hair-color": "No Hair"
-      },
-      "work": {
-        "occupation": "-",
-        "base": "-"
-      },
-      "connections": {
-        "group-affiliation": "-",
-        "relatives": "Alien Queen (mother)"
-      },
-      "image": {
-        "url": "https://www.superherodb.com/pictures2/portraits/10/100/10449.jpg"
-      }
-    },
-    {
-      "id": "19",
-      "response": "success",
-      "name": "Allan Quatermain",
-      "powerstats": {
-        "intelligence": "null",
-        "strength": "null",
-        "speed": "null",
-        "durability": "null",
-        "power": "null",
-        "combat": "null"
-      },
-      "biography": {
-        "full-name": "",
-        "alter-egos": "No alter egos found.",
-        "aliases": [
-          "-"
-        ],
-        "place-of-birth": "-",
-        "first-appearance": "(original version) King Solomon's Mines; (this version) League of Extraordinary Gentlemen #1 (America's Best Comics)",
-        "publisher": "Wildstorm",
-        "alignment": "good"
-      },
-      "appearance": {
-        "gender": "Male",
-        "race": "null",
-        "height": [
-          "-",
-          "0 cm"
-        ],
-        "weight": [
-          "- lb",
-          "0 kg"
-        ],
-        "eye-color": "-",
-        "hair-color": "-"
-      },
-      "work": {
-        "occupation": "(former) hunter; (current) agent of the British government",
-        "base": "The Secret Wing of the British Museum, London"
-      },
-      "connections": {
-        "group-affiliation": "League of Extraordinary Gentlemen",
-        "relatives": "-"
-      },
-      "image": {
-        "url": "https://www.superherodb.com/pictures2/portraits/10/100/630.jpg"
-      }
-    },
-    {
-      "id": "20",
-      "response": "success",
-      "name": "Amazo",
-      "powerstats": {
-        "intelligence": "63",
-        "strength": "100",
-        "speed": "83",
-        "durability": "100",
-        "power": "100",
-        "combat": "100"
-      },
-      "biography": {
-        "full-name": "",
-        "alter-egos": "No alter egos found.",
-        "aliases": [
-          "Professor Ivos Amazing Android",
-          "Timazo",
-          "Humazo",
-          "Hourmazo"
-        ],
-        "place-of-birth": "-",
-        "first-appearance": "Brave and the Bold #30 (July, 1960)",
-        "publisher": "DC Comics",
-        "alignment": "bad"
-      },
-      "appearance": {
-        "gender": "Male",
-        "race": "Android",
-        "height": [
-          "8'5",
-          "257 cm"
-        ],
-        "weight": [
-          "385 lb",
-          "173 kg"
-        ],
-        "eye-color": "Red",
-        "hair-color": "-"
-      },
-      "work": {
-        "occupation": "-",
-        "base": "-"
-      },
-      "connections": {
-        "group-affiliation": "Formerly the Secret Society of Super Villains",
-        "relatives": "Professor Ivo (creator), Kid Amazo (cyborg offspring)"
-      },
-      "image": {
-        "url": "https://www.superherodb.com/pictures2/portraits/10/100/1390.jpg"
-      }
-    },
-    {
       "id": "21",
       "response": "success",
       "name": "Ammo",
@@ -1315,6 +1065,57 @@
       }
     },
     {
+      "id": "2",
+      "response": "success",
+      "name": "Abe Sapien",
+      "powerstats": {
+        "intelligence": "88",
+        "strength": "28",
+        "speed": "35",
+        "durability": "65",
+        "power": "100",
+        "combat": "85"
+      },
+      "biography": {
+        "full-name": "Abraham Sapien",
+        "alter-egos": "No alter egos found.",
+        "aliases": [
+          "Langdon Everett Caul",
+          "Abraham Sapien",
+          "Langdon Caul"
+        ],
+        "place-of-birth": "-",
+        "first-appearance": "Hellboy: Seed of Destruction (1993)",
+        "publisher": "Dark Horse Comics",
+        "alignment": "good"
+      },
+      "appearance": {
+        "gender": "Male",
+        "race": "Icthyo Sapien",
+        "height": [
+          "6'3",
+          "191 cm"
+        ],
+        "weight": [
+          "145 lb",
+          "65 kg"
+        ],
+        "eye-color": "Blue",
+        "hair-color": "No Hair"
+      },
+      "work": {
+        "occupation": "Paranormal Investigator",
+        "base": "-"
+      },
+      "connections": {
+        "group-affiliation": "Bureau for Paranormal Research and Defense",
+        "relatives": "Edith Howard (wife, deceased)"
+      },
+      "image": {
+        "url": "https://www.superherodb.com/pictures2/portraits/10/100/956.jpg"
+      }
+    },
+    {
       "id": "3",
       "response": "success",
       "name": "Abin Sur",
@@ -1463,6 +1264,56 @@
       }
     },
     {
+      "id": "7",
+      "response": "success",
+      "name": "Adam Monroe",
+      "powerstats": {
+        "intelligence": "63",
+        "strength": "10",
+        "speed": "12",
+        "durability": "100",
+        "power": "100",
+        "combat": "64"
+      },
+      "biography": {
+        "full-name": "",
+        "alter-egos": "No alter egos found.",
+        "aliases": [
+          "Takezo Kensei",
+          "Richard Sanders"
+        ],
+        "place-of-birth": "-",
+        "first-appearance": "Heroes S02E01 - Four Months Later...",
+        "publisher": "NBC - Heroes",
+        "alignment": "good"
+      },
+      "appearance": {
+        "gender": "Male",
+        "race": "null",
+        "height": [
+          "-",
+          "0 cm"
+        ],
+        "weight": [
+          "- lb",
+          "0 kg"
+        ],
+        "eye-color": "Blue",
+        "hair-color": "Blond"
+      },
+      "work": {
+        "occupation": "former samurai swordsman, former British mercenary commander, former soldier in the Confederate Army",
+        "base": "U.S.; formerly Diedenshausen, Germany; Milan, Italy; Paris, France; Japan; England; Atlanta, GA; Montreal, Canada"
+      },
+      "connections": {
+        "group-affiliation": "-",
+        "relatives": "-"
+      },
+      "image": {
+        "url": "https://www.superherodb.com/pictures2/portraits/10/100/1026.jpg"
+      }
+    },
+    {
       "id": "6",
       "response": "success",
       "name": "Absorbing Man",
@@ -1517,56 +1368,6 @@
       }
     },
     {
-      "id": "7",
-      "response": "success",
-      "name": "Adam Monroe",
-      "powerstats": {
-        "intelligence": "63",
-        "strength": "10",
-        "speed": "12",
-        "durability": "100",
-        "power": "100",
-        "combat": "64"
-      },
-      "biography": {
-        "full-name": "",
-        "alter-egos": "No alter egos found.",
-        "aliases": [
-          "Takezo Kensei",
-          "Richard Sanders"
-        ],
-        "place-of-birth": "-",
-        "first-appearance": "Heroes S02E01 - Four Months Later...",
-        "publisher": "NBC - Heroes",
-        "alignment": "good"
-      },
-      "appearance": {
-        "gender": "Male",
-        "race": "null",
-        "height": [
-          "-",
-          "0 cm"
-        ],
-        "weight": [
-          "- lb",
-          "0 kg"
-        ],
-        "eye-color": "Blue",
-        "hair-color": "Blond"
-      },
-      "work": {
-        "occupation": "former samurai swordsman, former British mercenary commander, former soldier in the Confederate Army",
-        "base": "U.S.; formerly Diedenshausen, Germany; Milan, Italy; Paris, France; Japan; England; Atlanta, GA; Montreal, Canada"
-      },
-      "connections": {
-        "group-affiliation": "-",
-        "relatives": "-"
-      },
-      "image": {
-        "url": "https://www.superherodb.com/pictures2/portraits/10/100/1026.jpg"
-      }
-    },
-    {
       "id": "8",
       "response": "success",
       "name": "Adam Strange",
@@ -1614,6 +1415,55 @@
       },
       "image": {
         "url": "https://www.superherodb.com/pictures2/portraits/10/100/626.jpg"
+      }
+    },
+    {
+      "id": "11",
+      "response": "success",
+      "name": "Agent Zero",
+      "powerstats": {
+        "intelligence": "75",
+        "strength": "28",
+        "speed": "38",
+        "durability": "80",
+        "power": "72",
+        "combat": "95"
+      },
+      "biography": {
+        "full-name": "Christoph Nord",
+        "alter-egos": "No alter egos found.",
+        "aliases": [
+          "Maverick"
+        ],
+        "place-of-birth": "Unrevealed location in former East Germany",
+        "first-appearance": "-",
+        "publisher": "Marvel Comics",
+        "alignment": "good"
+      },
+      "appearance": {
+        "gender": "Male",
+        "race": "null",
+        "height": [
+          "6'3",
+          "191 cm"
+        ],
+        "weight": [
+          "230 lb",
+          "104 kg"
+        ],
+        "eye-color": "-",
+        "hair-color": "-"
+      },
+      "work": {
+        "occupation": "Mercenary, former government operative, freedom fighter",
+        "base": "-"
+      },
+      "connections": {
+        "group-affiliation": "Formerly Weapon X, Weapon Plus, Team X, Cell Six, former bodyguard of Psi-Borg, former agent of Major Barrington",
+        "relatives": "Unidentified parents (deceased), Andreas Nord (brother, deceased), Ginetta Lucia Barsalini (wife, deceased), unnamed child (deceased)"
+      },
+      "image": {
+        "url": "https://www.superherodb.com/pictures2/portraits/10/100/396.jpg"
       }
     },
     {
@@ -1666,54 +1516,52 @@
       }
     },
     {
-      "id": "14",
+      "id": "12",
       "response": "success",
-      "name": "Alan Scott",
+      "name": "Air-Walker",
       "powerstats": {
-        "intelligence": "63",
-        "strength": "80",
-        "speed": "23",
-        "durability": "90",
+        "intelligence": "50",
+        "strength": "85",
+        "speed": "100",
+        "durability": "85",
         "power": "100",
-        "combat": "32"
+        "combat": "40"
       },
       "biography": {
-        "full-name": "Alan Ladd Wellington Scott",
+        "full-name": "Gabriel Lan",
         "alter-egos": "No alter egos found.",
         "aliases": [
-          "Green Lantern",
-          "White King",
-          "Sentinal"
+          "-"
         ],
-        "place-of-birth": "Gotham City",
-        "first-appearance": "All-American Comics 16 (1940)",
-        "publisher": "DC Comics",
-        "alignment": "good"
+        "place-of-birth": "Xandar, a planet in the Tranta system, Andromeda galaxy",
+        "first-appearance": "Fantastic Four #120",
+        "publisher": "Marvel Comics",
+        "alignment": "bad"
       },
       "appearance": {
         "gender": "Male",
         "race": "null",
         "height": [
-          "5'11",
-          "180 cm"
+          "6'2",
+          "188 cm"
         ],
         "weight": [
-          "201 lb",
-          "90 kg"
+          "240 lb",
+          "108 kg"
         ],
         "eye-color": "Blue",
-        "hair-color": "Blond"
+        "hair-color": "White"
       },
       "work": {
-        "occupation": "-",
-        "base": "Gotham City and New York City; Formerly Capitol City"
+        "occupation": "Former starship captain, Herald of Galactus",
+        "base": "-"
       },
       "connections": {
-        "group-affiliation": "Justice Society of America; Formerly Checkmate; the Sentinels of Magic; Formerly All-Star Squadron",
-        "relatives": "Harlequin (Molly Mayne-Scott) (wife), Thorn (Rose Canton) (first wife, deceased), Todd Rice (Obsidian, son), Jennie-Lynn Hayden (Jade, daughter, deceased)"
+        "group-affiliation": "Former member of Nova Corps, Heralds of Galactus",
+        "relatives": "-"
       },
       "image": {
-        "url": "https://www.superherodb.com/pictures2/portraits/10/100/698.jpg"
+        "url": "https://www.superherodb.com/pictures2/portraits/10/100/1358.jpg"
       }
     },
     {
@@ -1769,104 +1617,6 @@
       }
     },
     {
-      "id": "11",
-      "response": "success",
-      "name": "Agent Zero",
-      "powerstats": {
-        "intelligence": "75",
-        "strength": "28",
-        "speed": "38",
-        "durability": "80",
-        "power": "72",
-        "combat": "95"
-      },
-      "biography": {
-        "full-name": "Christoph Nord",
-        "alter-egos": "No alter egos found.",
-        "aliases": [
-          "Maverick"
-        ],
-        "place-of-birth": "Unrevealed location in former East Germany",
-        "first-appearance": "-",
-        "publisher": "Marvel Comics",
-        "alignment": "good"
-      },
-      "appearance": {
-        "gender": "Male",
-        "race": "null",
-        "height": [
-          "6'3",
-          "191 cm"
-        ],
-        "weight": [
-          "230 lb",
-          "104 kg"
-        ],
-        "eye-color": "-",
-        "hair-color": "-"
-      },
-      "work": {
-        "occupation": "Mercenary, former government operative, freedom fighter",
-        "base": "-"
-      },
-      "connections": {
-        "group-affiliation": "Formerly Weapon X, Weapon Plus, Team X, Cell Six, former bodyguard of Psi-Borg, former agent of Major Barrington",
-        "relatives": "Unidentified parents (deceased), Andreas Nord (brother, deceased), Ginetta Lucia Barsalini (wife, deceased), unnamed child (deceased)"
-      },
-      "image": {
-        "url": "https://www.superherodb.com/pictures2/portraits/10/100/396.jpg"
-      }
-    },
-    {
-      "id": "12",
-      "response": "success",
-      "name": "Air-Walker",
-      "powerstats": {
-        "intelligence": "50",
-        "strength": "85",
-        "speed": "100",
-        "durability": "85",
-        "power": "100",
-        "combat": "40"
-      },
-      "biography": {
-        "full-name": "Gabriel Lan",
-        "alter-egos": "No alter egos found.",
-        "aliases": [
-          "-"
-        ],
-        "place-of-birth": "Xandar, a planet in the Tranta system, Andromeda galaxy",
-        "first-appearance": "Fantastic Four #120",
-        "publisher": "Marvel Comics",
-        "alignment": "bad"
-      },
-      "appearance": {
-        "gender": "Male",
-        "race": "null",
-        "height": [
-          "6'2",
-          "188 cm"
-        ],
-        "weight": [
-          "240 lb",
-          "108 kg"
-        ],
-        "eye-color": "Blue",
-        "hair-color": "White"
-      },
-      "work": {
-        "occupation": "Former starship captain, Herald of Galactus",
-        "base": "-"
-      },
-      "connections": {
-        "group-affiliation": "Former member of Nova Corps, Heralds of Galactus",
-        "relatives": "-"
-      },
-      "image": {
-        "url": "https://www.superherodb.com/pictures2/portraits/10/100/1358.jpg"
-      }
-    },
-    {
       "id": "13",
       "response": "success",
       "name": "Ajax",
@@ -1915,6 +1665,57 @@
       },
       "image": {
         "url": "https://www.superherodb.com/pictures2/portraits/10/100/10422.jpg"
+      }
+    },
+    {
+      "id": "14",
+      "response": "success",
+      "name": "Alan Scott",
+      "powerstats": {
+        "intelligence": "63",
+        "strength": "80",
+        "speed": "23",
+        "durability": "90",
+        "power": "100",
+        "combat": "32"
+      },
+      "biography": {
+        "full-name": "Alan Ladd Wellington Scott",
+        "alter-egos": "No alter egos found.",
+        "aliases": [
+          "Green Lantern",
+          "White King",
+          "Sentinal"
+        ],
+        "place-of-birth": "Gotham City",
+        "first-appearance": "All-American Comics 16 (1940)",
+        "publisher": "DC Comics",
+        "alignment": "good"
+      },
+      "appearance": {
+        "gender": "Male",
+        "race": "null",
+        "height": [
+          "5'11",
+          "180 cm"
+        ],
+        "weight": [
+          "201 lb",
+          "90 kg"
+        ],
+        "eye-color": "Blue",
+        "hair-color": "Blond"
+      },
+      "work": {
+        "occupation": "-",
+        "base": "Gotham City and New York City; Formerly Capitol City"
+      },
+      "connections": {
+        "group-affiliation": "Justice Society of America; Formerly Checkmate; the Sentinels of Magic; Formerly All-Star Squadron",
+        "relatives": "Harlequin (Molly Mayne-Scott) (wife), Thorn (Rose Canton) (first wife, deceased), Todd Rice (Obsidian, son), Jennie-Lynn Hayden (Jade, daughter, deceased)"
+      },
+      "image": {
+        "url": "https://www.superherodb.com/pictures2/portraits/10/100/698.jpg"
       }
     },
     {
@@ -1969,18 +1770,281 @@
       }
     },
     {
-      "id": "11a9",
-      "name": "daniela",
+      "id": "16",
+      "response": "success",
+      "name": "Alex Woolsly",
+      "powerstats": {
+        "intelligence": "null",
+        "strength": "37",
+        "speed": "null",
+        "durability": "null",
+        "power": "null",
+        "combat": "null"
+      },
       "biography": {
-        "full-name": "ahgjtth6y",
-        "alter-egos": "LA maravillosa",
+        "full-name": "Alex Woolsly",
+        "alter-egos": "No alter egos found.",
+        "aliases": [
+          "-"
+        ],
+        "place-of-birth": "-",
+        "first-appearance": "Heroes S02E16 - Building 26",
+        "publisher": "NBC - Heroes",
+        "alignment": "good"
+      },
+      "appearance": {
+        "gender": "Male",
+        "race": "null",
+        "height": [
+          "-",
+          "0 cm"
+        ],
+        "weight": [
+          "- lb",
+          "0 kg"
+        ],
+        "eye-color": "-",
+        "hair-color": "-"
+      },
+      "work": {
+        "occupation": "Employee at Sam's Comics",
+        "base": "Costa Verde, CA"
+      },
+      "connections": {
+        "group-affiliation": "-",
+        "relatives": "Mr. Woolsly, Mrs. Woolsly, sister"
+      },
+      "image": {
+        "url": "https://www.superherodb.com/pictures2/portraits/10/100/1309.jpg"
+      }
+    },
+    {
+      "id": "17",
+      "response": "success",
+      "name": "Alfred Pennyworth",
+      "powerstats": {
+        "intelligence": "63",
+        "strength": "10",
+        "speed": "17",
+        "durability": "10",
+        "power": "7",
+        "combat": "55"
+      },
+      "biography": {
+        "full-name": "Alfred Thaddeus Crane Pennyworth",
+        "alter-egos": "No alter egos found.",
+        "aliases": [
+          "Alfred Beagle"
+        ],
+        "place-of-birth": "-",
+        "first-appearance": "Batman #16 (April, 1943)",
+        "publisher": "DC Comics",
+        "alignment": "good"
+      },
+      "appearance": {
+        "gender": "Male",
+        "race": "Human",
+        "height": [
+          "5'10",
+          "178 cm"
+        ],
+        "weight": [
+          "160 lb",
+          "72 kg"
+        ],
+        "eye-color": "Blue",
+        "hair-color": "Black"
+      },
+      "work": {
+        "occupation": "Butler; Caretaker, former Actor; Field Medic; Government Agent",
+        "base": "Wayne Manor; Batcave; Gotham City"
+      },
+      "connections": {
+        "group-affiliation": "Batman Family, Outsiders",
+        "relatives": "Jarvis Pennyworth (father, deceased), Wilfred Pennyworth (older brother), Daphne Pennyworth (niece); Bruce Wayne (Batman, legal ward)"
+      },
+      "image": {
+        "url": "https://www.superherodb.com/pictures2/portraits/10/100/628.jpg"
+      }
+    },
+    {
+      "id": "18",
+      "response": "success",
+      "name": "Alien",
+      "powerstats": {
+        "intelligence": "50",
+        "strength": "28",
+        "speed": "42",
+        "durability": "90",
+        "power": "57",
+        "combat": "60"
+      },
+      "biography": {
+        "full-name": "Xenomorph",
+        "alter-egos": "No alter egos found.",
+        "aliases": [
+          "-"
+        ],
+        "place-of-birth": "Your chest :)",
+        "first-appearance": "Alien (1979)",
+        "publisher": "Dark Horse Comics",
+        "alignment": "bad"
+      },
+      "appearance": {
+        "gender": "Male",
+        "race": "Xenomorph XX121",
+        "height": [
+          "8'0",
+          "244 cm"
+        ],
+        "weight": [
+          "375 lb",
+          "169 kg"
+        ],
+        "eye-color": "-",
+        "hair-color": "No Hair"
+      },
+      "work": {
+        "occupation": "-",
+        "base": "-"
+      },
+      "connections": {
+        "group-affiliation": "-",
+        "relatives": "Alien Queen (mother)"
+      },
+      "image": {
+        "url": "https://www.superherodb.com/pictures2/portraits/10/100/10449.jpg"
+      }
+    },
+    {
+      "id": "19",
+      "response": "success",
+      "name": "Allan Quatermain",
+      "powerstats": {
+        "intelligence": "null",
+        "strength": "null",
+        "speed": "null",
+        "durability": "null",
+        "power": "null",
+        "combat": "null"
+      },
+      "biography": {
+        "full-name": "",
+        "alter-egos": "No alter egos found.",
+        "aliases": [
+          "-"
+        ],
+        "place-of-birth": "-",
+        "first-appearance": "(original version) King Solomon's Mines; (this version) League of Extraordinary Gentlemen #1 (America's Best Comics)",
+        "publisher": "Wildstorm",
+        "alignment": "good"
+      },
+      "appearance": {
+        "gender": "Male",
+        "race": "null",
+        "height": [
+          "-",
+          "0 cm"
+        ],
+        "weight": [
+          "- lb",
+          "0 kg"
+        ],
+        "eye-color": "-",
+        "hair-color": "-"
+      },
+      "work": {
+        "occupation": "(former) hunter; (current) agent of the British government",
+        "base": "The Secret Wing of the British Museum, London"
+      },
+      "connections": {
+        "group-affiliation": "League of Extraordinary Gentlemen",
+        "relatives": "-"
+      },
+      "image": {
+        "url": "https://www.superherodb.com/pictures2/portraits/10/100/630.jpg"
+      }
+    },
+    {
+      "id": "20",
+      "response": "success",
+      "name": "Amazo",
+      "powerstats": {
+        "intelligence": "63",
+        "strength": "100",
+        "speed": "83",
+        "durability": "100",
+        "power": "100",
+        "combat": "100"
+      },
+      "biography": {
+        "full-name": "",
+        "alter-egos": "No alter egos found.",
+        "aliases": [
+          "Professor Ivos Amazing Android",
+          "Timazo",
+          "Humazo",
+          "Hourmazo"
+        ],
+        "place-of-birth": "-",
+        "first-appearance": "Brave and the Bold #30 (July, 1960)",
+        "publisher": "DC Comics",
+        "alignment": "bad"
+      },
+      "appearance": {
+        "gender": "Male",
+        "race": "Android",
+        "height": [
+          "8'5",
+          "257 cm"
+        ],
+        "weight": [
+          "385 lb",
+          "173 kg"
+        ],
+        "eye-color": "Red",
+        "hair-color": "-"
+      },
+      "work": {
+        "occupation": "-",
+        "base": "-"
+      },
+      "connections": {
+        "group-affiliation": "Formerly the Secret Society of Super Villains",
+        "relatives": "Professor Ivo (creator), Kid Amazo (cyborg offspring)"
+      },
+      "image": {
+        "url": "https://www.superherodb.com/pictures2/portraits/10/100/1390.jpg"
+      }
+    },
+    {
+      "id": "a882",
+      "name": "test",
+      "biography": {
+        "full-name": "Tester",
+        "alter-egos": "",
         "aliases": [],
         "first-appearance": "",
         "publisher": "Marvel Comics",
-        "alignment": "bad"
+        "alignment": "good"
       },
       "image": {
-        "url": "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2018/03/bruja-escarlata.jpg?tf=3840x"
+        "url": ""
+      }
+    },
+    {
+      "id": "b1fe",
+      "name": "adfe",
+      "biography": {
+        "full-name": "afea",
+        "alter-egos": "",
+        "aliases": [],
+        "first-appearance": "",
+        "publisher": "Marvel Comics",
+        "alignment": "good"
+      },
+      "image": {
+        "url": ""
       }
     }
   ]

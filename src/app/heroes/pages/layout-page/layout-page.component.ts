@@ -13,7 +13,6 @@ export class LayoutPageComponent {
   sidebarItems$: Observable<sidebarItem[]> = of([
     { label: 'List', icon: 'label', url: './list'},
     { label: 'Add', icon: 'add', url: './manage-heroes'},
-    { label: 'Search', icon: 'search', url: './search'},
   ]);
 
 }

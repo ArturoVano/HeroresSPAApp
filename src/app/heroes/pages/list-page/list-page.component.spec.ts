@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ListPageComponent } from './list-page.component';
 import { HeroesService } from '../../services/heroes.service';
 import { SnackbarService } from 'src/app/services/snackbar.service';
-import { of, BehaviorSubject } from 'rxjs';
+import { of } from 'rxjs';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Hero } from '../../models/hero.model';
 
@@ -72,7 +72,6 @@ describe('ListPageComponent', () => {
       { name: 'Another Hero', biography: { publisher: 'Publisher' } } as Hero
     ];
     heroesService.getHeroes.and.returnValue(of(mockHeroes));
-    heroesService.refresh$ = new BehaviorSubject<boolean>(false);
 
     component.getListData().subscribe((heroes) => {
       expect(heroes).toEqual(mockHeroes);

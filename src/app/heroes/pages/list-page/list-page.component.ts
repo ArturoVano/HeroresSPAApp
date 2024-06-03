@@ -55,9 +55,8 @@ export class ListPageComponent implements OnDestroy {
     return combineLatest([
       this.heroesService.getHeroes(),
       this.search.valueChanges.pipe(startWith(''), debounceTime(200)),
-      this.heroesService.refresh$
     ]).pipe(
-      map(([heroes, search, refresh]) => {
+      map(([heroes, search]) => {
         if (search && search?.length >= 3) {
           heroes = heroes.filter(
             ({name}) => name.toLocaleLowerCase().includes(search.toLocaleLowerCase()))

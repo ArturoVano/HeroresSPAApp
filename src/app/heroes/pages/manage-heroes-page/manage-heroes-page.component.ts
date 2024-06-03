@@ -68,11 +68,13 @@ export class ManageHeroesPageComponent implements OnInit, OnDestroy {
     this.activatedRoute.params.pipe(
       switchMap(({id}) => this.heroesService.getHeroById(id))
     ).subscribe((hero) => {
-      !hero 
-        ? this.router.navigateByUrl('/') 
-        : this.populateFormWithHero(hero);
-
-        this.spinner$.next(false);
+      if (!hero) {
+        this.router.navigateByUrl('/') 
+        this.snackbarService.showMessage("Error loading hero for editing", false);
+      } else {
+        this.populateFormWithHero(hero);
+      }
+      this.spinner$.next(false);
     })
   }
 

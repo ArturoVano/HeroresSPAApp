@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, catchError, forkJoin, map, of, switchMap } from 'rxjs';
+import { Observable, catchError, forkJoin, map, of, switchMap } from 'rxjs';
 import { Hero, Response } from '../models/hero.model';
 import { environments } from 'src/environments/environments';
 
@@ -13,8 +13,6 @@ export class HeroesService {
   private heroesUrl = environments.heroesUrl;
   private externalHeroesUrl = environments.externalHeroesUrl;
   EXTERNAL_HEROES = 40;
-
-  refresh$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient) { }
 
@@ -72,11 +70,12 @@ export class HeroesService {
     const url = this.heroesUrl + "/" + id;
     return this.http.get<Hero>(url).pipe(
       catchError(() => of(undefined)),
-      map(hero => hero?.response === Response.SUCCESS ? hero : undefined)
+      map(hero => hero?.id ? hero : undefined)
     );
   }
 
   createHero(hero: Hero): Observable<Hero> {
+    console.log("createhero: ", hero);
     return this.http.post<Hero>(this.heroesUrl, hero);
   }
 
