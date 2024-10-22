@@ -1,6 +1,7 @@
-# HeroesW2M
+# HeroesSPA
 
-Project developed by World Two Meet company Test
+A Heores admin App SPA developed in Angular with Angular Material. 
+Using JSON Server to provide the data and a CRUD system to to allow advanced state management and reactivity.
 
 ## Development server
 
@@ -8,4 +9,4 @@ Project developed by World Two Meet company Test
 2. Execute `npm install`
 3. Start backend `nmp run backend`
 4. Execute the app `npm start`
-"# HeroesWTMApp" 
+"# HeroesSPAApp" 
