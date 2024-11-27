@@ -1,0 +1,74 @@
+<div class="container" >
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+
+        <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Username</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Enter your username"
+          required
+          [(ngModel)]="formData.username"
+          name="username"
+        />
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+  
+     
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          type="email"
+          placeholder="Enter your email"
+          required
+          [(ngModel)]="formData.email"
+          name="email"
+        />
+        <mat-icon matSuffix>email</mat-icon>
+      </mat-form-field>
+  
+     
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          type="password"
+          placeholder="Enter your password"
+          required
+          [(ngModel)]="formData.password"
+          name="password"
+        />
+        <mat-icon matSuffix>lock</mat-icon>
+      </mat-form-field>
+  
+      
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Moral Alignment</mat-label>
+        <mat-select [(ngModel)]="formData.moralAlignment" name="moralAlignment" required>
+          <mat-option value="good">Good</mat-option>
+          <mat-option value="bad">Bad</mat-option>
+        </mat-select>
+        <mat-icon matSuffix>category</mat-icon>
+      </mat-form-field>
+  
+    
+      <div class="buttons">
+        <button
+          type="submit"
+          class="button primary"
+          [disabled]="loginForm.invalid"
+        >
+          Log in
+        </button>
+        <button
+          type="button"
+          class="button accent"
+          (click)="autoFill()"
+        >
+          Auto Complete
+        </button>
+      </div>
+    </form>
+  </div>
+  

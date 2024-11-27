@@ -3,10 +3,11 @@ import { HeroesService } from '../../services/heroes.service';
 import { BehaviorSubject, Observable, Subscription, filter, switchMap, tap } from 'rxjs';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Alignment, Hero } from '../../models/hero.model';
+import { Hero } from '../../models/hero.model';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '../../components/dialogs/delete-dialog/delete-dialog.component';
 import { SnackbarService } from 'src/app/services/snackbar.service';
+import { Alignment } from 'src/app/models/aligment.model';
 
 @Component({
   selector: 'app-manage-heroes-page',

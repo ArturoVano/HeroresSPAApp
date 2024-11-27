@@ -1,4 +1,12 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "username": "Arturo",
+      "email": "arturo.vanyo@gmail.com",
+      "preference": "Marvel"
+    }
+  ],
   "heroes": [
     {
       "id": "1",

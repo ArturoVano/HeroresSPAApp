@@ -1,10 +1,11 @@
+import { Alignment } from "src/app/models/aligment.model";
 
 export interface Hero {
     response?:    Response;
     id?:          string;
-    name:        string;
+    name:         string;
     powerstats?:  Powerstats;
-    biography:   Biography;
+    biography:    Biography;
     appearance?:  Appearance;
     work?:        Work;
     connections?: Connections;
@@ -26,8 +27,8 @@ export interface Biography {
     aliases?:            string[];
     "place-of-birth"?:   string;
     "first-appearance"?: string;
-    publisher:          string;
-    alignment:          Alignment;
+    publisher:           string;
+    alignment:           Alignment;
 }
 
 export interface Connections {
@@ -56,9 +57,4 @@ export interface Work {
 export enum Response {
     SUCCESS = "success",
     ERROR = "error",
-}
-
-export enum Alignment {
-    GOOD = "good",
-    BAD = "bad",
 }
