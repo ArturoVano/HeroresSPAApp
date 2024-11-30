@@ -27,6 +27,16 @@
         <div class="flex-1 text-center text-xl">
             <span>Heroes SPA APP</span>
         </div>
+        <div *ngIf="user$ | async as user"
+            class="flex-final text-center relative user-actions"
+            (mouseenter)="showLogout = true" 
+            (mouseleave)="showLogout = false">
+            <span class="username">Welcome {{ user.username }}</span>
+
+            <div *ngIf="showLogout" class="logout-card">
+                <button mat-button (click)="logout()">Log out</button>
+            </div>
+        </div>
     </mat-toolbar>
 
     <div class="container p-2 h-full">

@@ -18,15 +18,15 @@ export class AuthService {
   // Find if the user is registered and set the token
   login(email: string, password: string): Observable<User | undefined> {
     return this.http.get<User[]>(environments.users).pipe(
-      map((users) => 
-        users.find((user) => 
-          user.email === email && user.password === password
-        )
-      ),
-      tap(user => {
-        if (user)
-          localStorage.setItem('token', user?.id.toString())
-      })
+      map(users => users.find(user => user.email === email && user.password === password)),
+      tap(user => this.setToken(user))
+    );
+  }
+
+  // Save a new user
+  register(user: User): Observable<User | undefined> {
+    return this.http.post<User>(environments.users, user).pipe(
+      tap(user => this.setToken(user))
     );
   }
 
@@ -37,10 +37,19 @@ export class AuthService {
     }
   }
 
-  getUser() {
+  // Get the current valid user, useful also to check if is correctly authenticated
+  getUserLoged(): Observable<User | undefined> {
     const token = localStorage.getItem('token');
     return token 
       ? this.http.get<User>(environments.users + '/' + token)
       : of(undefined);
   }
+
+  // Save user token
+  private setToken(user: User | undefined) {
+    if (user?.id) {
+      localStorage.setItem('token', user.id.toString());
+    }
+  }
+
 }

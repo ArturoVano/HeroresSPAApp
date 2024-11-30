@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AuthComponent } from './pages/auth/auth.component';
 import { AuthRoutingModule } from './auth-routing.module';
 import { MaterialModule } from '../material/material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +15,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     AuthRoutingModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AuthModule { }

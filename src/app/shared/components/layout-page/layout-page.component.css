@@ -1,0 +1,40 @@
+.username {
+    transition: color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  /* Icono chevron con animación */
+  .icon-chevron {
+    margin-left: 5px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  /* Contenedor que envuelve el texto e icono */
+  .user-actions:hover .username,
+  .user-actions:hover .icon-chevron {
+    color: #ff4081; /* Color del hover */
+  }
+  
+  /* Tarjeta de logout */
+  .logout-card {
+    position: absolute;
+    top: 100%; /* Justo debajo del texto */
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  .logout-card button {
+    color: #ff4081; /* Color del botón */
+    font-weight: bold;
+  }
+  
+  .logout-card button:hover {
+    background-color: rgba(255, 64, 129, 0.1);
+  }
+  
