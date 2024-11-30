@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environments } from 'src/environments/environments';
 import { User } from '../models/user.model';
-import { Observable, filter, map, of, tap } from 'rxjs';
+import { Observable, catchError, map, of, tap } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -41,7 +41,9 @@ export class AuthService {
   getUserLoged(): Observable<User | undefined> {
     const token = localStorage.getItem('token');
     return token 
-      ? this.http.get<User>(environments.users + '/' + token)
+      ? this.http.get<User>(environments.users + '/' + token).pipe(
+        catchError(() => of(undefined))
+      )
       : of(undefined);
   }
 

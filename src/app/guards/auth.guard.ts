@@ -1,21 +1,37 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { CanActivate, Router, CanActivateChild } from '@angular/router';
 import { AuthService } from '../auth/services/auth.service';
-import { Observable, map, tap } from 'rxjs';
+import { Observable, first, map, take, tap } from 'rxjs';
+import { SnackbarService } from '../services/snackbar.service';
 
 // Older version of guards, use CanActivateFn now with inject Fn
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuard implements CanActivate {
+export class AuthGuard implements CanActivate, CanActivateChild {
   constructor(
     private router: Router,
-    private authService: AuthService) {}
+    private authService: AuthService,
+    private snackbarService: SnackbarService) {}
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> {
+  canActivateChild(): Observable<boolean>{
+    return this.hasUser();
+  }
+
+  canActivate(): Observable<boolean> {
+    return this.hasUser();
+  }
+
+  hasUser(): Observable<boolean> {
     return this.authService.getUserLoged().pipe(
-      tap(user => user && this.router.navigate(['auth'])),
-      map(user => !user)
+      first(),
+      tap(user => {
+        if (!user) {
+          this.snackbarService.showMessage("You are not logged in", true)
+          this.router.navigate(['./auth'])
+        }
+      }),
+      map(user => !!user)
     );
   }
 }

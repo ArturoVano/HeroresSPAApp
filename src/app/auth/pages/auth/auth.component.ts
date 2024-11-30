@@ -1,6 +1,6 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { BehaviorSubject, concatMap, filter, fromEvent, map, of, switchMap, tap } from 'rxjs';
+import { BehaviorSubject, concatMap, filter, fromEvent, map, of, Subject, switchMap, take, takeUntil, tap } from 'rxjs';
 import { Router } from '@angular/router';
 import { FormDataUser, User } from '../../models/user.model';
 import { Alignment } from 'src/app/models/aligment.model';
@@ -16,9 +16,8 @@ import { SnackbarService } from 'src/app/services/snackbar.service';
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.css'],
 })
-export class AuthComponent {
-
-  @ViewChild('loginButton', { static: true }) loginButton!: ElementRef<HTMLButtonElement>;
+export class AuthComponent implements OnInit, OnDestroy {
+  private destroyed$ = new Subject()
 
   userForm = this.fb.group({
     username: ['', [Validators.required, Validators.minLength(3)]],
@@ -27,10 +26,11 @@ export class AuthComponent {
     preference: ['', Validators.required],
   });
 
-  formSubmited$ = new BehaviorSubject<SubmitEvent | undefined>(undefined);
+  private formSubmited$ = new BehaviorSubject<SubmitEvent | undefined>(undefined);
 
   // Update the reactive flow automatically
   authUser$ = this.formSubmited$.pipe(
+    takeUntil(this.destroyed$),
     filter(() => this.userForm.valid),
     switchMap(() => this.authService.login(
       this.userForm.get('email')!.value!, 
@@ -52,12 +52,14 @@ export class AuthComponent {
               private fb: FormBuilder,
               private snackbarService: SnackbarService) {}
 
+  ngOnInit(): void {
+    this.authUser$.subscribe();
+  }
+
   onSubmit(event: SubmitEvent) {
-    if (this.userForm.valid) {
-      this.formSubmited$.next(event);
-    } else {
-      this.snackbarService.showMessage("Invalid form, prealse review the fields", true);
-    }
+    this.userForm.valid
+      ? this.formSubmited$.next(event)
+      : this.snackbarService.showMessage("Invalid form, prealse review the fields", true);
   }
 
   // Allow the user not to complete the form manually for quick access
@@ -77,6 +79,11 @@ export class AuthComponent {
       password: this.userForm.get('password')?.value || '',
       preference: this.userForm.get('preference')?.value || undefined
     } as FormDataUser;
+  }
+
+  ngOnDestroy() {
+    this.destroyed$.next(true);
+    this.destroyed$.complete()
   }
 }
 
