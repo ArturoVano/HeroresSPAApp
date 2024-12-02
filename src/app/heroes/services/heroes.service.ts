@@ -13,7 +13,7 @@ export class HeroesService {
 
   private heroesUrl = environments.heroesUrl;
   private externalHeroesUrl = environments.externalHeroesUrl;
-  EXTERNAL_HEROES = 40;
+  EXTERNAL_HEROES = 80;
 
   constructor(
     private http: HttpClient,
@@ -103,5 +103,11 @@ export class HeroesService {
       catchError(() => of(false)),
       map(() => true)
     );
+  }
+
+  filterHeroesFromFE(heroes: Hero[], term: string): Hero[] {
+    return heroes.filter(({name}) => 
+      name.toLocaleLowerCase().includes(term.toLocaleLowerCase())
+    )
   }
 }

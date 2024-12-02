@@ -43,17 +43,11 @@ describe('ListPageComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should unsubscribe on destroy', () => {
-    spyOn(component.subscription, 'unsubscribe');
-    component.ngOnDestroy();
-    expect(component.subscription.unsubscribe).toHaveBeenCalled();
-  });
-
   it('should fill heroes and handle success', () => {
     heroesService.getHeroes.and.returnValue(of([]));
     heroesService.initiateExternalHeroes.and.returnValue(of(true));
 
-    component.fillHeroes();
+    component.fillHeroesWithExternal();
     fixture.detectChanges();
 
     expect(heroesService.initiateExternalHeroes).toHaveBeenCalled();
@@ -64,7 +58,7 @@ describe('ListPageComponent', () => {
     heroesService.getHeroes.and.returnValue(of([]));
     heroesService.initiateExternalHeroes.and.returnValue(of(false));
 
-    component.fillHeroes();
+    component.fillHeroesWithExternal();
     fixture.detectChanges();
 
     expect(snackbarService.showMessage).toHaveBeenCalledWith('Error saving heroes of external api into local db', false);

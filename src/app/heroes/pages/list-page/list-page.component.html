@@ -27,35 +27,34 @@
 
     <mat-divider></mat-divider>
 
-    <mat-card *ngIf="!heroes?.length" class="no-heroes-card m-6">
-        <mat-card-header>
-          <mat-card-title class="m-2">There are no heroes</mat-card-title>
-          <mat-card-subtitle class="m-2">Click to ask for heroes in web</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-actions>
-          <button mat-button 
-            (click)="fillHeroes()"
-            color="accent"
-          >
-            Ask
-        </button>
-        </mat-card-actions>
-      </mat-card>
+    <div class="flex justify-content-center">
+        <!-- <span>noExistingHeroes: {{ noExistingHeroes.value }}</span> -->
+        <mat-card *ngIf="!heroes.length && (noHeroesInDB | async)" class="no-heroes-card m-6 w-full">
+            <mat-card-header>
+                <mat-card-title class="m-2">There are no heroes</mat-card-title>
+                <mat-card-subtitle class="m-2">Click to ask for heroes in web</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-actions>
+                <button mat-button 
+                    (click)="fillHeroesWithExternal()"
+                    color="accent"
+                >
+                    Ask
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
 
-    <!-- <mat-card *ngIf="!heroes?.length" >
-        <mat-card-header>
-            <mat-card-title>There are no heroes</mat-card-title>
-            <mat-card-subtitle>Click to ask for heroes in web</mat-card-subtitle>
-            
-            <button
-                mat-button
-                color="accent"
-                (click)="fillHeroes()"
-            >
-                Ask
-            </button>
-        </mat-card-header>
-    </mat-card> -->
+    <div class="flex justify-content-center">
+        <mat-card *ngIf="!heroes.length && !(noHeroesInDB | async)" class="no-heroes-card m-6 w-full">
+            <mat-card-header>
+                <mat-card-title class="m-2">Sorry, we couldn't find any heroes matching your search</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-card-subtitle class="m-2">Try searching with different terms or explore other options</mat-card-subtitle>
+            </mat-card-content>
+        </mat-card>
+    </div>
 
     <div class="grid bm-8 pt-5">
         <div *ngFor="let hero of heroes"
@@ -67,4 +66,16 @@
             </list-hero-item>
         </div>
     </div>
+
+    <div>
+        <mat-paginator 
+            [length]="totalListItems"
+            [pageSize]="pageSize"
+            aria-label="Select page"
+            [hidePageSize]="true"
+            color="warn"
+            (page)="onPageChange($event)">
+        </mat-paginator>
+    </div>
+
 </div>
