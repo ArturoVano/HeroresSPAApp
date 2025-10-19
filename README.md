@@ -11,7 +11,7 @@ Backend and Frontend is deployed, try the prod app now here https://arturovano.g
 
 1. Clone the proyect
 2. Execute `npm install`
-3. Start backend `nmp run backend`
+3. Start backend `npm run backend`
 4. Execute the app `npm start`
 
 ## Project Overview

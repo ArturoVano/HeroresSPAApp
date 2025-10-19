@@ -6,8 +6,14 @@
       "email": "arturo.vanyo@gmail.com",
       "password": "1234",
       "preference": "good"
+    },
+    {
+      "id": "7619",
+      "username": "RandomUser",
+      "email": "random@example.com",
+      "password": "123456",
+      "preference": "good"
     }
   ],
-  "heroes": [
-  ]
+  "heroes": []
 }
